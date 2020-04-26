@@ -4,9 +4,31 @@
     "x": 0,
     "y": 0,
     "uniqueID": 849008,
-    "ioValues": [],
+    "ioValues": [
+        {
+            "name": "Geometry",
+            "ioValue": 10
+        }
+    ],
     "topLevel": true,
     "allAtoms": [
+        {
+            "atomType": "Input",
+            "name": "Geometry",
+            "x": 0.0212298682284041,
+            "y": 0.45801526717557256,
+            "uniqueID": 400978,
+            "ioValues": []
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.28257686676427524,
+            "y": 0.4809160305343511,
+            "uniqueID": 296208,
+            "ioValues": [],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n\n\nfunction main(Input1, Input2){\n  return Sphere(40)        //return must be geometry;\n}\n\nreturn main(Input1, Input2)"
+        },
         {
             "atomType": "Output",
             "name": "Output",
@@ -16,5 +38,7 @@
         }
     ],
     "allConnectors": [],
-    "fileTypeVersion": 1
+    "fileTypeVersion": 1,
+    "filetypeVersion": 1,
+    "circleSegmentSize": 2
 }

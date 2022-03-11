@@ -86,7 +86,7 @@
             "ioValues": [
                 {
                     "name": "number or geometry",
-                    "ioValue": "source/849008/359293Extrude"
+                    "ioValue": "source/849008/358038Code"
                 }
             ]
         }
@@ -94,17 +94,17 @@
     "allConnectors": [
         {
             "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 358038,
+            "ap2ID": 588971
+        },
+        {
+            "ap1Name": "geometry",
             "ap2Name": "Input1",
             "ap2Primary": false,
             "ap1ID": 359293,
             "ap2ID": 358038
-        },
-        {
-            "ap1Name": "geometry",
-            "ap2Name": "number or geometry",
-            "ap2Primary": false,
-            "ap1ID": 359293,
-            "ap2ID": 588971
         },
         {
             "ap1Name": "geometry",

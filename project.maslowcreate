@@ -23,8 +23,8 @@
         {
             "atomType": "Code",
             "name": "Code",
-            "x": 0.5272727272727272,
-            "y": 0.3292307692307692,
+            "x": 0.5297619047619048,
+            "y": 0.32307692307692304,
             "uniqueID": 358038,
             "ioValues": [
                 {
@@ -32,7 +32,7 @@
                     "ioValue": 10
                 }
             ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\n\nconst incidentSolarEnergyPerMeter = 1000; //watts/m^2\nconst incidentSolarEnergyPerMM = incidentSolarEnergyPerMeter / 1000000;\n\nconst angleOfTheSun = -29.7; //degrees...totall aproximation because obvously the sun moves. Found from https://www.solarpaneltilt.com/\n\n//Offset our angle by where the sun is\nconst rotatedShape = Input1.rotateY(angleOfTheSun);\n\n//console.log('After rotate');\n\nconst pannelSize = rotatedShape.cast().size();\n\nconst incidentEnergy = incidentSolarEnergyPerMM * pannelSize.length * pannelSize.width;\n\n//log('Incident energy: ' + incidentEnergy);\n\nreturn incidentEnergy;"
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\n\nconst incidentSolarEnergyPerMeter = 1000; //watts/m^2\nconst incidentSolarEnergyPerMM = incidentSolarEnergyPerMeter / 1000000;\n\nconst angleOfTheSun = -29.7; //degrees...totall aproximation because obvously the sun moves. Found from https://www.solarpaneltilt.com/\n\n//Offset our angle by where the sun is\nconst rotatedShape = Input1.rotateY(angleOfTheSun/360);\n\n//console.log('After rotate');\n\nconst pannelSize = rotatedShape.cast().size();\n\nconst incidentEnergy = incidentSolarEnergyPerMM * pannelSize.length * pannelSize.width;\n\n//log('Incident energy: ' + incidentEnergy);\n\nreturn incidentEnergy;"
         },
         {
             "atomType": "Readme",

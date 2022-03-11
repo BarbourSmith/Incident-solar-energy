@@ -21,24 +21,10 @@
             "ioValues": []
         },
         {
-            "atomType": "Code",
-            "name": "Code",
-            "x": 0.5244708994708994,
-            "y": 0.3446153846153846,
-            "uniqueID": 358038,
-            "ioValues": [
-                {
-                    "name": "Input1",
-                    "ioValue": "source/849008/359293Extrude"
-                }
-            ],
-            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\n\n//console.log(\"At the beginning\")\n//console.log(Input1)\n\nconst incidentSolarEnergyPerMeter = 1000; //watts/m^2\nconst incidentSolarEnergyPerMM    = incidentSolarEnergyPerMeter / 1000000;\n\nconst angleOfTheSun = -29.7; //degrees...totall aproximation because obvously the sun moves. Found from https://www.solarpaneltilt.com/\n\n//Offset our angle by where the sun is\nconst rotatedShape = Input1.rotateY(angleOfTheSun);\n  \nconsole.log(\"After rotate\");\n  \nconst incidentEnergy = incidentSolarEnergyPerMM*rotatedShape.squash().size().area;\nconsole.log(incidentEnergy);\n  \n  \nreturn incidentEnergy;"
-        },
-        {
             "atomType": "Extrude",
             "name": "Extrude",
-            "x": 0.39616402116402116,
-            "y": 0.7107692307692308,
+            "x": 0.30303030303030304,
+            "y": 0.5076923076923077,
             "uniqueID": 359293,
             "ioValues": [
                 {
@@ -50,6 +36,20 @@
                     "ioValue": 10
                 }
             ]
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.5272727272727272,
+            "y": 0.3292307692307692,
+            "uniqueID": 358038,
+            "ioValues": [
+                {
+                    "name": "Input1",
+                    "ioValue": "source/849008/359293Extrude"
+                }
+            ],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\n\nconst incidentSolarEnergyPerMeter = 1000; //watts/m^2\nconst incidentSolarEnergyPerMM = incidentSolarEnergyPerMeter / 1000000;\n\nconst angleOfTheSun = -29.7; //degrees...totall aproximation because obvously the sun moves. Found from https://www.solarpaneltilt.com/\n\n//Offset our angle by where the sun is\nconst rotatedShape = Input1.rotateY(angleOfTheSun);\n\n//console.log('After rotate');\n\nconst pannelSize = rotatedShape.cast().size();\n\nconst incidentEnergy = incidentSolarEnergyPerMM * pannelSize.length * pannelSize.width;\n\n//log('Incident energy: ' + incidentEnergy);\n\nreturn incidentEnergy;"
         },
         {
             "atomType": "Rectangle",
@@ -94,17 +94,17 @@
     "allConnectors": [
         {
             "ap1Name": "geometry",
-            "ap2Name": "number or geometry",
-            "ap2Primary": false,
-            "ap1ID": 358038,
-            "ap2ID": 588971
-        },
-        {
-            "ap1Name": "geometry",
             "ap2Name": "Input1",
             "ap2Primary": false,
             "ap1ID": 359293,
             "ap2ID": 358038
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "number or geometry",
+            "ap2Primary": false,
+            "ap1ID": 358038,
+            "ap2ID": 588971
         },
         {
             "ap1Name": "geometry",

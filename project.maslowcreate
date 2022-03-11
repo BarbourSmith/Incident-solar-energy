@@ -21,6 +21,23 @@
             "ioValues": []
         },
         {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.30303030303030304,
+            "y": 0.5076923076923077,
+            "uniqueID": 359293,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "source/849008/431773Rectangle"
+                },
+                {
+                    "name": "height",
+                    "ioValue": 10
+                }
+            ]
+        },
+        {
             "atomType": "Code",
             "name": "Code",
             "x": 0.5272727272727272,
@@ -29,10 +46,53 @@
             "ioValues": [
                 {
                     "name": "Input1",
-                    "ioValue": 10
+                    "ioValue": "source/849008/359293Extrude"
                 }
             ],
             "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1];\n\n\nconst incidentSolarEnergyPerMeter = 1000; //watts/m^2\nconst incidentSolarEnergyPerMM = incidentSolarEnergyPerMeter / 1000000;\n\nconst angleOfTheSun = -29.7; //degrees...totall aproximation because obvously the sun moves. Found from https://www.solarpaneltilt.com/\n\n//Offset our angle by where the sun is\nconst rotatedShape = Input1.rotateY(angleOfTheSun);\n\n//console.log('After rotate');\n\nconst pannelSize = rotatedShape.cast().size();\n\nconst incidentEnergy = incidentSolarEnergyPerMM * pannelSize.length * pannelSize.width;\n\n//log('Incident energy: ' + incidentEnergy);\n\nreturn incidentEnergy;"
+        },
+        {
+            "atomType": "Extrude",
+            "name": "Extrude",
+            "x": 0.4107142857142857,
+            "y": 0.6799999999999999,
+            "uniqueID": 742952,
+            "ioValues": [
+                {
+                    "name": "geometry",
+                    "ioValue": "source/849008/431773Rectangle"
+                },
+                {
+                    "name": "height",
+                    "ioValue": "source/849008/261598Code"
+                }
+            ]
+        },
+        {
+            "atomType": "Rectangle",
+            "name": "Rectangle",
+            "x": 0.21362433862433863,
+            "y": 0.7938461538461539,
+            "uniqueID": 431773,
+            "ioValues": [
+                {
+                    "name": "x length",
+                    "ioValue": 10
+                },
+                {
+                    "name": "y length",
+                    "ioValue": 10
+                }
+            ]
+        },
+        {
+            "atomType": "Code",
+            "name": "Code",
+            "x": 0.3115079365079365,
+            "y": 0.8646153846153847,
+            "uniqueID": 261598,
+            "ioValues": [],
+            "code": "//You can learn more about all of the available methods at https://jsxcad.js.org/app/UserGuide.html \n//Inputs:[Input1, Input2];\n\n\nreturn 10"
         },
         {
             "atomType": "Readme",
@@ -41,8 +101,7 @@
             "y": 0.8338461538461539,
             "uniqueID": 766049,
             "ioValues": [],
-            "readmeText": "Returns a rough approximation of the total solar energy incident on a input geometry. Very rough because it assumes a static sun position.",
-            "global": true
+            "readmeText": "Returns a rough approximation of the total solar energy incident on a input geometry. Very rough because it assumes a static sun position."
         },
         {
             "atomType": "Output",
@@ -53,17 +112,17 @@
             "ioValues": [
                 {
                     "name": "number or geometry",
-                    "ioValue": 4.032432432432437
+                    "ioValue": "source/849008/358038Code"
                 }
             ]
         }
     ],
     "allConnectors": [
         {
-            "ap1Name": "number or geometry",
+            "ap1Name": "geometry",
             "ap2Name": "Input1",
             "ap2Primary": false,
-            "ap1ID": 400978,
+            "ap1ID": 359293,
             "ap2ID": 358038
         },
         {
@@ -72,6 +131,27 @@
             "ap2Primary": false,
             "ap1ID": 358038,
             "ap2ID": 588971
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 431773,
+            "ap2ID": 359293
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "geometry",
+            "ap2Primary": true,
+            "ap1ID": 431773,
+            "ap2ID": 742952
+        },
+        {
+            "ap1Name": "geometry",
+            "ap2Name": "height",
+            "ap2Primary": false,
+            "ap1ID": 261598,
+            "ap2ID": 742952
         }
     ],
     "fileTypeVersion": 1,
